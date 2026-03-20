@@ -23,16 +23,45 @@
         }
 
         .btn {
-            padding: 12px 20px;
+            padding: 14px 28px;
             margin: 10px;
             text-decoration: none;
-            border-radius: 6px;
+            border-radius: 8px;
             display: inline-block;
             font-weight: bold;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
         }
 
-        .buy { background: gold; color: black; }
-        .download { background: #2563eb; color: white; }
+        .buy {
+            background: linear-gradient(45deg, #FFD700, #FFC107);
+            color: black;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+        }
+
+        .buy:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 0 25px rgba(255, 215, 0, 1);
+        }
+
+        .buy:active {
+            transform: scale(0.98);
+        }
+        .download {
+            background: linear-gradient(45deg, #2563eb, #1e40af);
+            color: white;
+            box-shadow: 0 0 12px rgba(37, 99, 235, 0.6);
+        }
+
+        .download:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 0 20px rgba(37, 99, 235, 1);
+        }
+
+        .download:active {
+            transform: scale(0.98);
+        }
 
         .features {
             display: flex;
@@ -59,14 +88,23 @@
         }
 
         .overlay {
-            background: rgba(0, 0, 0, 0.6);
-            padding: 40px;
-            border-radius: 10px;
+            background: none;
+            padding: 0;
         }
 
         ul {
             list-style: none;
             padding: 0;
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
+            50% { box-shadow: 0 0 20px rgba(255, 215, 0, 1); }
+            100% { box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
+        }
+
+        .buy {
+            animation: pulseGlow 2s infinite;
         }
 
         /* Responsive */
@@ -91,10 +129,10 @@
 <div class="hero">
     <div class="overlay">
         
-        <p>Smart Money MT5 EA (FVG + Liquidity Sweep + KillZone)</p>
+        
 
         <a href="https://www.mql5.com" class="btn buy">Buy on MQL5</a>
-        <a href="https://raw.githubusercontent.com/aureusalgo/fvg-ea-website/main/docs/user-manual.pdf" class="btn download" target="_blank">Download SET & Manual</a>
+        
     </div>
 </div>
 
@@ -156,7 +194,7 @@ win rate, and risk-reward statistics will be published here shortly.
 <!-- CTA -->
 <h2>Start Trading Smarter</h2>
 <a href="https://www.mql5.com" class="btn buy">Buy Now on MQL5</a>
-<a href="https://raw.githubusercontent.com/aureusalgo/fvg-ea-website/main/docs/user-manual.pdf" class="btn download" target="_blank">Download SET & Manual</a>
+
 
 </body>
 </html>

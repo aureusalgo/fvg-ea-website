@@ -14,199 +14,206 @@
             color: white;
         }
 
-        h1, h2 {
-            text-align: center;
-            margin-bottom: 10px;
+        /* NAVBAR */
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(10px);
+            z-index: 999;
         }
 
-        h2 {
-            margin-top: 60px;
-            font-size: 28px;
-        }
-
-        p {
-            line-height: 1.6;
-            text-align: center;
-            opacity: 0.9;
+        .nav .cta-btn {
+            padding: 10px 20px;
+            background: #FFD700;
+            color: black;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
         }
 
         /* HERO */
         .hero {
-            background: radial-gradient(circle at top, #111827, #020617);
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 40px 20px;
-        }
-
-        .hero-content {
-            max-width: 900px;
+            padding-top: 80px;
+            background: radial-gradient(circle at top, #111827, #020617);
         }
 
         .logo {
-            width: 220px;
-            max-width: 80%;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 0 20px rgba(255,215,0,0.4));
+            width: 200px;
+            animation: float 4s ease-in-out infinite, glow 3s infinite;
         }
 
-        .hero h1 {
-            font-size: 42px;
+        @keyframes float {
+            0%,100%{transform:translateY(0)}
+            50%{transform:translateY(-10px)}
+        }
+
+        @keyframes glow {
+            0%,100%{filter:drop-shadow(0 0 15px rgba(255,215,0,0.4))}
+            50%{filter:drop-shadow(0 0 40px rgba(255,215,0,1))}
+        }
+
+        h1 {
+            font-size: 40px;
             color: #FFD700;
         }
 
-        .hero p {
-            font-size: 18px;
-            margin-bottom: 25px;
-        }
-
-        /* BUTTONS */
         .btn {
             padding: 14px 30px;
-            margin: 10px;
-            text-decoration: none;
             border-radius: 10px;
-            display: inline-block;
+            text-decoration: none;
             font-weight: 600;
-            transition: all 0.3s ease;
+            margin: 10px;
+            display: inline-block;
         }
 
         .buy {
-            background: linear-gradient(45deg, #FFD700, #FFC107);
+            background: linear-gradient(45deg,#FFD700,#FFC107);
             color: black;
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
-        }
-
-        .buy:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 0 30px rgba(255, 215, 0, 1);
         }
 
         .download {
-            background: linear-gradient(45deg, #2563eb, #1e40af);
+            background: #2563eb;
             color: white;
         }
 
-        .download:hover {
-            transform: translateY(-3px);
+        /* TRUST BAR */
+        .trust {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            font-size: 14px;
+            opacity: 0.8;
         }
 
         /* SECTIONS */
         .section {
-            padding: 40px 20px;
+            padding: 60px 20px;
+            text-align: center;
         }
 
-        .features {
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
             gap: 20px;
             max-width: 1100px;
             margin: auto;
         }
 
         .card {
-            background: linear-gradient(145deg, #111827, #1f2937);
             padding: 25px;
+            background: #111827;
             border-radius: 12px;
-            text-align: center;
-            font-weight: 600;
-            transition: 0.3s;
-            border: 1px solid rgba(255,255,255,0.05);
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        .cta {
-            text-align: center;
+        /* PERFORMANCE */
+        .performance {
+            background: #020617;
             padding: 60px 20px;
         }
 
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 30px;
-            }
+        .performance img {
+            max-width: 90%;
+            border-radius: 10px;
+        }
 
-            .logo {
-                width: 160px;
-            }
+        /* TESTIMONIAL */
+        .testimonial {
+            max-width: 700px;
+            margin: auto;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        /* STICKY CTA */
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: #000;
+            padding: 10px;
+            text-align: center;
+            z-index: 999;
+        }
+
+        .sticky-cta a {
+            background: #FFD700;
+            padding: 10px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
         }
 
     </style>
 </head>
 <body>
 
-<!-- HERO -->
+<div class="nav">
+    <div>AureusAlgo</div>
+    <a href="https://www.mql5.com" class="cta-btn">Buy Now</a>
+</div>
+
 <div class="hero">
-    <div class="hero-content">
-        <!-- USE YOUR LOGO HERE -->
-        <img src="assets/logo23.png" class="logo" alt="AureusAlgo Logo">
-
-        <h1>AureusAlgo HTF-LTF FVG Pro</h1>
-        <p>Smart Money MT5 EA (FVG + Liquidity Sweep + KillZone)</p>
-
+    <div>
+        <img src="assets/logo23.png" class="logo">
+        <h1>HTF-LTF FVG Pro</h1>
+        <p>Smart Money EA with Precision Entries</p>
         <a href="https://www.mql5.com" class="btn buy">Buy on MQL5</a>
-        <a href="#" class="btn download">Download SET & Manual</a>
+        <a href="#" class="btn download">Download Manual</a>
+
+        <div class="trust">
+            <span>✔ Prop Firm Ready</span>
+            <span>✔ Automated</span>
+            <span>✔ Risk Controlled</span>
+        </div>
     </div>
 </div>
 
-<!-- STRATEGY -->
 <div class="section">
-<h2>Strategy Overview</h2>
-<p style="max-width:800px;margin:auto;">
-This EA uses Smart Money Concepts combining HTF and LTF Fair Value Gaps with liquidity sweep confirmation.
-It executes precision entries during kill zones with strict risk control.
+<h2>Why Traders Choose This</h2>
+<div class="grid">
+    <div class="card">HTF Bias + LTF Entry</div>
+    <div class="card">Liquidity Sweep Logic</div>
+    <div class="card">Kill Zone Timing</div>
+    <div class="card">Multi TP + BE</div>
+</div>
+</div>
+
+<div class="performance">
+<h2>Performance Snapshot</h2>
+<!-- PERFORMANCE IMAGE (will show when uploaded) -->
+<img src="assets/performance.png" alt="Performance" onerror="this.style.display='none'; document.getElementById('perf-placeholder').style.display='block';">
+
+<!-- FALLBACK PLACEHOLDER -->
+<p id="perf-placeholder" style="display:none; opacity:0.6; font-size:14px;">
+Performance image will appear here once uploaded
 </p>
 </div>
 
-<!-- DIFFERENTIATION -->
 <div class="section">
-<h2>Why This EA is Different</h2>
-<div class="features">
-    <div class="card">HTF Directional Bias</div>
-    <div class="card">Liquidity Sweep + FVG Combo</div>
-    <div class="card">Prop Firm Compliance</div>
-    <div class="card">Fully Automated Logic</div>
-</div>
+<h2>Trader Feedback</h2>
+<p class="testimonial">"This EA helped me pass my prop firm challenge with disciplined execution."</p>
 </div>
 
-<!-- FEATURES -->
 <div class="section">
-<h2>Core Features</h2>
-<div class="features">
-    <div class="card">HTF + LTF Precision Entry</div>
-    <div class="card">Kill Zone Timing</div>
-    <div class="card">Multi TP System</div>
-    <div class="card">Breakeven + Trailing</div>
-</div>
+<h2>Download Resources</h2>
+<a href="#" class="btn download">User Manual</a>
 </div>
 
-<!-- DOWNLOAD -->
-<div class="section">
-<h2>Free Resources</h2>
-<p>Download user manual and product details</p>
-
-<div class="features">
-    <div class="card">
-        📘 User Manual<br><br>
-        <a href="https://raw.githubusercontent.com/aureusalgo/fvg-ea-website/main/docs/user-manual.pdf" class="btn download" target="_blank">Download</a>
-    </div>
-
-    <div class="card">
-        📄 Product Description<br><br>
-        <a href="https://raw.githubusercontent.com/aureusalgo/fvg-ea-website/main/docs/product-description.pdf" class="btn download" target="_blank">Download</a>
-    </div>
-</div>
-</div>
-
-<!-- CTA -->
-<div class="cta">
-<h2>Start Trading Smarter</h2>
-<a href="https://www.mql5.com" class="btn buy">Buy Now on MQL5</a>
+<div class="sticky-cta">
+    <a href="https://www.mql5.com">🚀 Buy AureusAlgo Now</a>
 </div>
 
 </body>

@@ -3,159 +3,190 @@
 <head>
     <title>AureusAlgo FVG EA</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
     <style>
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: #0f172a;
+            font-family: 'Poppins', sans-serif;
+            background: #0b1220;
             color: white;
-            text-align: center;
         }
 
-        h1 { color: gold; }
+        h1, h2 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
 
         h2 {
-            margin-top: 40px;
+            margin-top: 60px;
+            font-size: 28px;
         }
 
         p {
             line-height: 1.6;
+            text-align: center;
+            opacity: 0.9;
         }
 
+        /* HERO */
+        .hero {
+            background: radial-gradient(circle at top, #111827, #020617);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .logo {
+            width: 220px;
+            max-width: 80%;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 20px rgba(255,215,0,0.4));
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            color: #FFD700;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        /* BUTTONS */
         .btn {
-            padding: 14px 28px;
+            padding: 14px 30px;
             margin: 10px;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 10px;
             display: inline-block;
-            font-weight: bold;
-            letter-spacing: 0.5px;
+            font-weight: 600;
             transition: all 0.3s ease;
-            box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
         }
 
         .buy {
             background: linear-gradient(45deg, #FFD700, #FFC107);
             color: black;
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
         }
 
         .buy:hover {
-            transform: translateY(-2px) scale(1.05);
-            box-shadow: 0 0 25px rgba(255, 215, 0, 1);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 0 30px rgba(255, 215, 0, 1);
         }
 
-        .buy:active {
-            transform: scale(0.98);
-        }
         .download {
             background: linear-gradient(45deg, #2563eb, #1e40af);
             color: white;
-            box-shadow: 0 0 12px rgba(37, 99, 235, 0.6);
         }
 
         .download:hover {
-            transform: translateY(-2px) scale(1.05);
-            box-shadow: 0 0 20px rgba(37, 99, 235, 1);
+            transform: translateY(-3px);
         }
 
-        .download:active {
-            transform: scale(0.98);
+        /* SECTIONS */
+        .section {
+            padding: 40px 20px;
         }
 
         .features {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 20px;
-            padding: 20px;
+            max-width: 1100px;
+            margin: auto;
         }
 
         .card {
-            background: #1e293b;
-            padding: 20px;
-            border-radius: 10px;
-            width: 220px;
-            font-weight: bold;
+            background: linear-gradient(145deg, #111827, #1f2937);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: 600;
+            transition: 0.3s;
+            border: 1px solid rgba(255,255,255,0.05);
         }
 
-        .hero {
-            background: url('assets/hero-banner.png') no-repeat center center/cover;
-            height: 90vh;
-            position: relative;
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        .overlay {
-            background: none;
-            padding: 0;
+        .cta {
+            text-align: center;
+            padding: 60px 20px;
         }
 
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        @keyframes pulseGlow {
-            0% { box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
-            50% { box-shadow: 0 0 20px rgba(255, 215, 0, 1); }
-            100% { box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
-        }
-
-        .buy {
-            animation: pulseGlow 2s infinite;
-        }
-
-        /* Responsive */
         @media (max-width: 768px) {
-            .hero {
-                height: 70vh;
+            .hero h1 {
+                font-size: 30px;
             }
 
-            .overlay {
-                padding: 20px;
-            }
-
-            .card {
-                width: 90%;
+            .logo {
+                width: 160px;
             }
         }
+
     </style>
 </head>
 <body>
 
-<!-- HERO SECTION -->
+<!-- HERO -->
 <div class="hero">
-    <div style="position:absolute; bottom:40px;">
+    <div class="hero-content">
+        <!-- USE YOUR LOGO HERE -->
+        <img src="assets/logo.png" class="logo" alt="AureusAlgo Logo">
+
+        <h1>AureusAlgo HTF-LTF FVG Pro</h1>
+        <p>Smart Money MT5 EA (FVG + Liquidity Sweep + KillZone)</p>
+
         <a href="https://www.mql5.com" class="btn buy">Buy on MQL5</a>
+        <a href="#" class="btn download">Download SET & Manual</a>
     </div>
 </div>
 
 <!-- STRATEGY -->
+<div class="section">
 <h2>Strategy Overview</h2>
 <p style="max-width:800px;margin:auto;">
-This EA uses Smart Money Concepts combining Higher Timeframe (HTF) and Lower Timeframe (LTF) Fair Value Gaps.
-It identifies institutional liquidity sweeps and executes precision entries during kill zones for maximum efficiency.
+This EA uses Smart Money Concepts combining HTF and LTF Fair Value Gaps with liquidity sweep confirmation.
+It executes precision entries during kill zones with strict risk control.
 </p>
+</div>
 
 <!-- DIFFERENTIATION -->
+<div class="section">
 <h2>Why This EA is Different</h2>
 <div class="features">
-    <div class="card">HTF Directional Bias Filter</div>
+    <div class="card">HTF Directional Bias</div>
     <div class="card">Liquidity Sweep + FVG Combo</div>
-    <div class="card">Prop Firm Risk Control</div>
-    <div class="card">Smart Trade Automation Engine</div>
+    <div class="card">Prop Firm Compliance</div>
+    <div class="card">Fully Automated Logic</div>
+</div>
 </div>
 
 <!-- FEATURES -->
+<div class="section">
 <h2>Core Features</h2>
 <div class="features">
-    <div class="card">HTF + LTF FVG Precision</div>
-    <div class="card">Liquidity Sweep Entry Logic</div>
-    <div class="card">Kill Zone Execution Timing</div>
-    <div class="card">Multi TP + Breakeven System</div>
+    <div class="card">HTF + LTF Precision Entry</div>
+    <div class="card">Kill Zone Timing</div>
+    <div class="card">Multi TP System</div>
+    <div class="card">Breakeven + Trailing</div>
+</div>
 </div>
 
-<!-- DOWNLOAD SECTION -->
+<!-- DOWNLOAD -->
+<div class="section">
 <h2>Free Resources</h2>
 <p>Download user manual and product details</p>
 
@@ -170,26 +201,13 @@ It identifies institutional liquidity sweeps and executes precision entries duri
         <a href="https://raw.githubusercontent.com/aureusalgo/fvg-ea-website/main/docs/product-description.pdf" class="btn download" target="_blank">Download</a>
     </div>
 </div>
-
-<!-- BACKTEST / RESULTS (WIP) -->
-<h2>Backtest Results (Work in Progress)</h2>
-<p style="max-width:800px;margin:auto;">
-Comprehensive backtesting is currently in progress. Detailed performance metrics including equity curve, drawdown,
-win rate, and risk-reward statistics will be published here shortly.
-</p>
-
-<div class="features">
-    <div class="card">Equity Curve: Coming Soon</div>
-    <div class="card">Max Drawdown: Coming Soon</div>
-    <div class="card">Win Rate: Coming Soon</div>
-    <div class="card">Risk-Reward: Coming Soon</div>
 </div>
 
 <!-- CTA -->
+<div class="cta">
 <h2>Start Trading Smarter</h2>
 <a href="https://www.mql5.com" class="btn buy">Buy Now on MQL5</a>
-
+</div>
 
 </body>
-</html>
 </html>

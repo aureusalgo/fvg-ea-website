@@ -2,43 +2,131 @@
 <html>
 <head>
     <title>AureusAlgo FVG EA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             margin: 0;
-            font-family: Arial;
+            font-family: Arial, sans-serif;
             background: #0f172a;
             color: white;
             text-align: center;
         }
+
         h1 { color: gold; }
+
+        h2 {
+            margin-top: 40px;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
         .btn {
             padding: 12px 20px;
             margin: 10px;
             text-decoration: none;
             border-radius: 6px;
             display: inline-block;
+            font-weight: bold;
         }
+
         .buy { background: gold; color: black; }
         .download { background: #2563eb; color: white; }
+
+        .features {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background: #1e293b;
+            padding: 20px;
+            border-radius: 10px;
+            width: 220px;
+            font-weight: bold;
+        }
+
+        .hero {
+            background: url('assets/hero-banner.png') no-repeat center center/cover;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .overlay {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            border-radius: 10px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                height: 70vh;
+            }
+
+            .overlay {
+                padding: 20px;
+            }
+
+            .card {
+                width: 90%;
+            }
+        }
     </style>
 </head>
 <body>
-<div style="text-align:center;">
-   <img src="assets/hero-banner.png" width="90%" alt="AureusAlgo Banner">
+
+<!-- HERO SECTION -->
+<div class="hero">
+    <div class="overlay">
+        <h1>AureusAlgo HTF-LTF FVG Pro</h1>
+        <p>Smart Money MT5 EA (FVG + Liquidity Sweep + KillZone)</p>
+
+        <a href="https://www.mql5.com" class="btn buy">Buy on MQL5</a>
+        <a href="https://drive.google.com" class="btn download">Download SET & Manual</a>
+    </div>
 </div>
-<h1>AureusAlgo HTF-LTF FVG Pro</h1>
-<p>Smart Money EA (FVG + Liquidity Sweep + KillZone)</p>
 
-<a href="https://www.mql5.com" class="btn buy">Buy on MQL5</a>
+<!-- STRATEGY -->
+<h2>Strategy Overview</h2>
+<p style="max-width:800px;margin:auto;">
+This EA uses Smart Money Concepts combining Higher Timeframe (HTF) and Lower Timeframe (LTF) Fair Value Gaps.
+It identifies institutional liquidity sweeps and executes precision entries during kill zones for maximum efficiency.
+</p>
+
+<!-- DIFFERENTIATION -->
+<h2>Why This EA is Different</h2>
+<div class="features">
+    <div class="card">HTF Directional Bias Filter</div>
+    <div class="card">Liquidity Sweep + FVG Combo</div>
+    <div class="card">Prop Firm Risk Control</div>
+    <div class="card">Automated Trade Management</div>
+</div>
+
+<!-- FEATURES -->
+<h2>Core Features</h2>
+<div class="features">
+    <div class="card">HTF + LTF FVG Precision</div>
+    <div class="card">Liquidity Sweep Confirmation</div>
+    <div class="card">Kill Zone Trading</div>
+    <div class="card">Multi TP + Breakeven</div>
+</div>
+
+<!-- CTA -->
+<h2>Start Trading Smarter</h2>
+<a href="https://www.mql5.com" class="btn buy">Buy Now on MQL5</a>
 <a href="https://drive.google.com" class="btn download">Download SET & Manual</a>
-
-<h2>Features</h2>
-<ul>
-<li>HTF + LTF FVG</li>
-<li>Liquidity Sweep Confirmation</li>
-<li>Kill Zone Trading</li>
-<li>Multi TP + Breakeven</li>
-</ul>
 
 </body>
 </html>
